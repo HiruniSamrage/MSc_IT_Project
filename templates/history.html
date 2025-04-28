@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campy - Chat History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='campy.css') }}">
+    <style>
+        .history-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .history-container ul {
+            padding-left: 20px;
+        }
+
+        .history-container li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .bot {
+            color: #006064;
+        }
+
+        .user {
+            color: #B22222;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #0198b2;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .back-link:hover {
+            background-color: #007b8f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="history-container">
+        <h2>Welcome back, {{ user }}! 👋</h2>
+        <h3>Your Chat History with Campy:</h3>
+
+        {% if history %}
+            <ul>
+                {% for sender, msg, time in history %}
+                    <li>
+                        <strong class="{{ sender }}">{{ sender.capitalize() }}:</strong>
+                        {{ msg }} <em style="font-size: 12px;">({{ time }})</em>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You have no saved conversations yet.</p>
+        {% endif %}
+
+        <a class="back-link" href="{{ url_for('home') }}">⬅ Back to Chat</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+</body>
+</html>
