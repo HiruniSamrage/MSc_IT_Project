@@ -26,7 +26,7 @@ CORS(app)
 app.secret_key = 'API_secret_key'
 
 # Load OpenAI API key
-openai.api_key = os.getenv or "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"
+openai.api_key = ""
 
 # Load FAISS index + knowledge
 print("Loading vector DB and knowledge base...")
