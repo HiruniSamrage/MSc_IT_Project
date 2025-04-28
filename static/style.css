@@ -1,0 +1,501 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #B22222; /* Firebrick red */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #f4cccc;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: 40px; /* adds spacing between content and footer */
+}
+
+
+/* Chatbot Button */
+#chatbot-button {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    background-color: #B22222; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+#chatbot-container {
+    width: 480px;  /* Try increasing from 400px to 440px */
+    max-height: 520px;
+    background: white;
+    border: 1px solid #ccc;
+    display: none;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+#chatbox .bot-bubble:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+
+#sendBtn {
+    margin-right: 8px;
+}
+
+
+#chatbox {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 14px;
+}
+
+#userInput {
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.logo-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-left {
+    position: absolute;
+    left: 20px;
+    height: 90px;
+    margin-top: 10px; /* 👈 Pushes the logo down */
+}
+
+}
+
+.site-title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+}
+.program-section ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-left: 20px;
+}
+.iitt-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: white;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.image-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.image-column img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.program-column {
+    flex: 2;
+    max-width: 600px;
+}
+
+.program-column h3, .program-column h4 {
+    text-align: center;
+}
+
+.program-column ul {
+    text-align: left;
+    margin: 0 auto 20px;
+    padding-left: 20px;
+}
+/* Scroll animation base */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When in viewport */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slide-in-left {
+    transform: translateX(-50px);
+}
+
+.slide-in-right {
+    transform: translateX(50px);
+}
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.about-content h2, .about-content h3 {
+    text-align: center;
+}
+
+.about-content ul {
+    padding-left: 20px;
+}
+.course-banner {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.course-banner img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.contact-banner {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-banner img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+}
+.lifestyle-banner {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.lifestyle-banner img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease-out;
+}
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.login-container h2 {
+  margin-bottom: 10px;
+  color: #B22222;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #990000;
+}
+.chat-history-button {
+    background-color: #0097A7 !important; /* Blue background */
+    color: white !important;
+    border: none !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2) !important;
+    margin-left: 10px !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chat-history-button:hover {
+    background-color: #007B8F !important; /* Slightly darker blue */
+}
+.greeting {
+    padding: 12px 14px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    font-weight: normal;
+    border-radius: 8px 8px 0 0;
+    line-height: 1.5;
+    word-break: break-word;       /* ✅ wrap long words like "Campy" or "IIT" */
+    white-space: normal;          /* ✅ allow wrapping */
+    overflow: visible;            /* ✅ show all content */
+	text-align: center;
+	animation: fadeSlideIn 0.8s ease-in-out;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbox {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.input-wrapper {
+    padding: 0 10px;
+}
+
+#userInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px 10px;
+}
+.feedback {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.feedback-btn {
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.feedback-btn:hover {
+  transform: scale(1.2);
+}
+.chat-login-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+.chat-login-button:hover {
+    background-color: #e67e22;
+}
+.login-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+}
+
+.login-inline input {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#startChattingBtn {
+    padding: 8px;
+    background-color: #007B8F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #fffafc;
+  border-radius: 12px;
+}
+
+.contact-form, .contact-info {
+  flex: 1 1 45%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form button {
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #951d1d;
+}
+
+.contact-info h3 {
+  color: #b22222;
+}
+
+.contact-info p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
