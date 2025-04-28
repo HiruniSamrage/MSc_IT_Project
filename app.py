@@ -26,7 +26,7 @@ CORS(app)
 app.secret_key = 'API_secret_key'
 
 # Load OpenAI API key
-openai.api_key = ""
+openai.api_key = "API Key cannot be exposed as per the rules and reguslations of the OpenAI. It will be provided during the viva"
 
 # Load FAISS index + knowledge
 print("Loading vector DB and knowledge base...")
