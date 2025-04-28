@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Institute of Innovative Technologies (IIT)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='campy.css') }}">
+</head>
+<body>
+  <header>
+    <div class="logo-title-container">
+      <img src="{{ url_for('static', filename='iit-logo.png') }}" alt="IIT Logo" class="logo-left">
+      <h1 class="site-title">Institute of Innovative Technologies (IIT)</h1>
+    </div>
+    <nav>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/courses">Courses</a>
+  <a href="/contact">Contact</a>
+</nav>
+
+  </header>
+
+  <main class="about-content">
+
+    <!-- Campus Lifestyle Banner -->
+    <section class="animate-on-scroll" style="text-align:center; margin-bottom: 40px;">
+      <img src="{{ url_for('static', filename='lifestyle-banner.webp') }}" alt="360 Campus Lifestyle" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+    </section>
+
+    <!-- Welcome Message -->
+    <section class="animate-on-scroll">
+      <h2>About IIT</h2>
+      <p style="font-style: italic; font-size: 20px; color: #B22222;">“Everything we do at IIT is driven by delivering excellence!”</p>
+      <p>
+        Institute of Innovative Technologies (IIT) was established in Colombo, Sri Lanka in 1990 as the first private higher education institute awarding reputed British degrees in the field of Information Communication Technology (ICT) and professional business. 
+      </p>
+      <p>
+        IIT has reshaped and revolutionized the higher education sector of Sri Lanka by empowering graduates to become innovators, entrepreneurs and business leaders. Over the course of three decades, IIT has established itself as a pioneer, providing British higher education. Currently, IIT has produced more than 3000 graduates who are spread across the globe, playing pivotal roles in well reputed companies.
+      </p>
+    </section>
+
+    <!-- Library Image -->
+    <section class="animate-on-scroll" style="text-align:center; margin: 40px 0;">
+      <img src="{{ url_for('static', filename='library-1400313_1280.jpg') }}" alt="Library" style="max-width: 900px; width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </section>
+
+    <!-- Our Values -->
+    <section class="animate-on-scroll">
+      <h3>Our Values</h3>
+      <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 20px;">
+        {% for value in [
+          "Innovation: Foster creativity and forward-thinking solutions.",
+          "Excellence: Maintain academic and operational quality.",
+          "Integrity: Practice honesty and transparency.",
+          "Diversity and Inclusivity: Embrace all backgrounds and perspectives.",
+          "Collaboration: Encourage interdisciplinary teamwork.",
+          "Adaptability: Evolve with industry trends.",
+          "Practical Application: Promote hands-on, real-world learning.",
+          "Global Perspective: Develop cross-cultural awareness.",
+          "Empathy: Lead with understanding and compassion.",
+          "Lifelong Learning: Commit to continuous development.",
+          "Community Engagement: Give back locally and globally."
+        ] %}
+        <div style="background:#fef2f2; border-left: 6px solid #B22222; padding: 15px 20px; border-radius: 8px;">
+          <p style="margin: 0;">{{ value }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Image of Students (friend group) -->
+    <section class="animate-on-scroll" style="text-align:center; margin: 50px 0;">
+      <img src="{{ url_for('static', filename='friend-2727305_1280.jpg') }}" alt="Student Life" style="max-width: 700px; width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </section>
+
+    <!-- Quality & Recognitions -->
+    <section class="animate-on-scroll">
+      <h3>Quality & Recognitions</h3>
+      <p>
+        Institute of Innovative Technologies (IIT) provides higher education recognized by global quality assurance bodies, reflecting the premier standard upheld at the institute.
+      </p>
+      <ul style="padding-left: 20px; font-size: 17px; line-height: 1.7;">
+        <li>✔ University Grants Commission (UGC), Sri Lanka Recognized</li>
+        <li>✔ Tertiary and Vocational Education Commission (TVEC), Sri Lanka Registered</li>
+        <li>✔ British Computer Society (BCS) Accredited Degree</li>
+        <li>✔ ISO 9001:2015 Quality Management System (QMS) Certified</li>
+        <li>✔ Sri Lanka Association of Software and Services Companies (SLASSCOM), Member</li>
+        <li>✔ Federation of Information Technology Industry Sri Lanka (FITIS), Member</li>
+      </ul>
+    </section>
+
+    <!-- Graduation Photo -->
+    <section class="animate-on-scroll" style="text-align:center; margin: 40px 0;">
+      <img src="{{ url_for('static', filename='academic-1822682_1280.jpg') }}" alt="Graduation Group" style="max-width: 800px; width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </section>
+<!-- Floating Chat Icon -->
+<button id="chatbot-button" onclick="toggleChat(); playSparkle();">💬</button>
+
+<!-- Chatbot Bouncing Bar -->
+<div id="chatbot-bar">👋 Hi, I'm <strong>Campy</strong>! Ask Anything!</div>
+
+<!-- Chatbot Box -->
+<div id="chatbot-container">
+  <!-- Chatbot Header with Close + Minimize -->
+  <div class="chatbox-header">
+    👋 Hi, I’m <strong>Campy</strong>! Ask me anything about IIT.
+    <span id="usernameDisplay"></span>
+    <div style="margin-left:auto;">
+      <button onclick="toggleVoice()" title="Toggle Voice" id="voiceToggle" class="chat-header-btn">🔇</button>
+      <button onclick="minimizeChat()" title="Minimize" class="chat-header-btn">➖</button>
+      <button onclick="closeChat()" title="Close" class="chat-header-btn">❌</button>
+    </div>
+  </div>
+
+  <div id="loginArea">
+    <form id="loginForm">
+      <input id="name" type="text" placeholder="Full Name" required />
+      <div id="name-error" class="error-text"></div>
+      <input id="email" type="email" placeholder="Email Address" required />
+      <div id="email-error" class="error-text"></div>
+      <input id="contact" type="text" placeholder="Contact Number" required />
+      <div id="contact-error" class="error-text"></div>
+      <button type="submit">🔐 Login</button>
+    </form>
+  </div>
+
+  <div id="chatArea" style="display:none;"></div>
+
+  <div class="input-row" style="display:none;">
+    <input id="chatInput" type="text" placeholder="Ask Campy..." disabled />
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="loadChatHistory()">📋 Chat History</button>
+  </div>
+</div>
+<!-- Sparkle Sound -->
+<audio id="sparkle-audio" preload="auto">
+  <source src="{{ url_for('static', filename='real-sparkle.mp3') }}" type="audio/mpeg">
+</audio>
+<!-- Soft Chime Sound -->
+<audio id="chime-audio" preload="auto">
+  <source src="{{ url_for('static', filename='soft-chime.mp3') }}" type="audio/mpeg">
+</audio>
+<audio id="campy-response" preload="auto">
+  <source src="{{ url_for('static', filename='campy-response.mp3') }}" type="audio/mpeg">
+</audio>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Institute of Innovative Technologies (IIT). All rights reserved.</p>
+  </footer>
+  </script>
+ <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+
+
+<!-- Play Sound Function -->
+<script>
+  function playSparkle() {
+    document.getElementById("sparkle-audio").play();
+  }
+</script>
+
+<script>
+  let chatOpen = false;
+
+  function toggleChat() {
+    const box = document.getElementById("chatbot-container");
+    const bar = document.getElementById("chatbot-bar");
+
+    if (box.style.display === "flex") {
+      box.style.display = "none";
+      if (bar) bar.style.display = "block";
+      chatOpen = false;
+    } else {
+      box.style.display = "flex";
+      if (bar) bar.style.display = "none";
+      chatOpen = true;
+    }
+  }
+</script>
+
+
+<script>
+  let audioUnlocked = false;
+
+  function playChime() {
+    const chime = document.getElementById("chime-audio");
+    if (chime) {
+      chime.currentTime = 0;
+      chime.play();
+    }
+  }
+
+  function unlockAudio() {
+    if (!audioUnlocked) {
+      const chime = document.getElementById("chime-audio");
+      if (chime) {
+        chime.play().then(() => {
+          audioUnlocked = true;
+          chime.pause();
+          chime.currentTime = 0;
+        });
+      }
+    }
+  }
+
+  document.addEventListener("click", unlockAudio);
+</script>
+
+<script>
+  const chatIcon = document.getElementById("chatbot-button");
+  if (chatIcon) {
+    chatIcon.addEventListener("mouseenter", function () {
+      if (audioUnlocked && !chatOpen) {
+        playChime();
+      }
+    });
+  }
+
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      if (audioUnlocked && !chatOpen) {
+        playChime();
+      }
+    }, 600);
+  });
+
+</body>
+</html>
